@@ -3,29 +3,29 @@ import React from 'react';
 import { BrowserRouter as Router, Route, Routes, Navigate } from 'react-router-dom';
 
 import { useSelector } from 'react-redux';
-import Session from './pages/NonLoggedinpages/Session';
-import MainPage from './pages/NonLoggedinpages/Home';
-import LoginSighnup from './pages/LoginSighnup';
-import Adminlogin from './pages/Loggedinpages/admin/Login';
-import Profile from './pages/Loggedinpages/NonAdmin/Profile';
-import Setting from './pages/Loggedinpages/NonAdmin/Setting';
-import Follower from './pages/Loggedinpages/NonAdmin/Follower';
-import Following from './pages/Loggedinpages/NonAdmin/Following';
-import Post from './pages/Loggedinpages/NonAdmin/Post';
-import AdmiHome from './pages/Loggedinpages/admin/Home';
-import PM from './pages/Loggedinpages/admin/PostManagmant';
-import UM from './pages/Loggedinpages/admin/UserManagment';
+import Session from "./pages/Session/page/index";
+import MainPage from "./pages/Home/page/index";
+import LoginSighnup from "./pages/loginAndSignup/page/index";
+import Profile from "./pages/Regular/profile/page/index";
+import Setting from "./pages/Regular/setting/page/index";
+import Follower from "./pages/Regular/follower/page/index";
+import Following from "./pages/Regular/follower/page/index";
+import Post from "./pages/Regular/Post/page/index";
+import AdmiHome from "./pages/admin/adminDashborad/page/index";
+import PM  from "./pages/admin/adminPM/page/index";
+import UM   from "./pages/admin/adminUM/page/index";
+import Adminlogin from "./pages/admin/adminlogin/page/index";
 
 export function WebRoutes() {
-  const AdminOrNot = useSelector((state) => state.reducer.AdminOrNot);
-  const IsLoggedin = useSelector((state) => state.reducer.IsLoggedin);
-  console.log(AdminOrNot,IsLoggedin);
+  const IsAdminOrnot = useSelector((state) => state.reducer.IsAdminOrnot);
+  const isloggedin = useSelector((state) => state.reducer.isloggedin);
+  console.log(IsAdminOrnot,isloggedin);
 
   return (
     <Router>
       <Routes>
 
-        {IsLoggedin?((AdminOrNot?( <>
+        {isloggedin?((IsAdminOrnot?( <>
             <Route path="/session" element={<Session />} />
             <Route path="/home" element={<MainPage />} />
             <Route path="/" element={<MainPage />} />

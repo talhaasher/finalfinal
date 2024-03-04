@@ -1,0 +1,92 @@
+
+.header {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 5vw;
+  margin: 0 auto;
+}
+
+.header a {
+  text-decoration: none;
+  color: black;
+}
+
+.logo {
+  width: 10vh;
+  background-color: white;
+}
+
+
+.logouser {
+  width: 2vw;
+  min-width: 20px;
+  background-color: white;
+}
+
+.dropbtn {
+  color: white;
+  font-size: 16px;
+  border: none;
+}
+
+/* Style for the dropdown container */
+.dropdown {
+  position: relative;
+  display: inline-block;
+}
+
+/* Style for the dropdown content (hidden by default) */
+.dropdown_content {
+  display: none;
+  position: absolute;
+  background-color: #f1f1f1;
+  min-width: 120px;
+  /* box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2); */
+  z-index: 1;
+ 
+ 
+    transition:  all .5s;
+ 
+
+}
+
+/* Style for the links inside the dropdown */
+.dropdown_content a {
+  color: black;
+  padding: 12px 0;
+  text-decoration: none;
+  display: block;
+}
+
+/* Change color on hover for dropdown links */
+.dropdown_content a:hover,.NaviO:hover {
+  /* box-shadow: 0 2px 0px hsl(0, 0%, 33%); */
+
+  
+}
+
+/* Display the dropdown content when hovering over the dropdown container */
+.dropdown:hover .dropdown_content {
+  display: block;
+
+}
+
+/* Change background color of the dropdown button on hover */
+.dropdown:hover .dropbtn {
+  background-color: #ffffff;
+}
+.NaviO:hover{
+  box-shadow: 0 2px 0px hsl(0, 0%, 33%);
+  text-decoration: underline;
+
+}
+.admin{
+  color: rgb(0, 0, 0);
+  text-decoration: none;
+  width: 5vh;
+  border-style: none;
+  background-color:white;
+  font-size: 16px;
+
+}

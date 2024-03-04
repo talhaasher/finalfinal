@@ -2,10 +2,11 @@ import classes from './index.module.css';
 
 import React from 'react'
 
-function Setting() {
+
+function Adminlogin() {
   return (
-    <div>Setting</div>
+    <div>Adminlogin</div>
   )
 }
 
-export default Setting;
+export default Adminlogin;
