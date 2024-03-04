@@ -1,0 +1,70 @@
+/* The CSS code you provided is defining the styles for a section with the class name "section1". */
+.section1{
+  width: 90%;
+  display: grid;
+  grid-template-columns: 50% 50%;
+  border: .5 rgba(176, 173, 173,0.5) solid;
+  background-color: rgb(221, 221, 221);
+  border: 1px none black;
+margin: 0 auto;
+background-size: cover;
+
+  
+}
+
+.info{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    color: black;
+    text-transform: capitalize;
+  }
+  .info p{
+    padding-bottom: 7vh;
+  }
+  .banner1 img{
+    
+    width: 45vw;
+    background-size: cover;
+    border-radius: 20px;
+  }
+  .button_container {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 1vh;
+    gap: 15vw; }
+  
+  .button_container button {
+    
+    border-radius: 20px;
+    border: 1px none rgb(0, 0, 0);
+    border-style: unset;
+    background-color: lightblue;
+    width: max-content;
+    padding: 0 5px;}
+  .button_container button {
+    font-size: 16px;
+    text-decoration-style: capitalize;
+  }
+  .button_container button:hover{
+    cursor: pointer;
+    background-color: darkblue;
+    color: white;
+  
+  }
+  .button_container a:hover{
+    color: white;
+
+  }
+
+
+
+  @media only screen and (max-width: 400px) {
+    .info{
+      flex-direction: column;
+      
+
+    }
+  }

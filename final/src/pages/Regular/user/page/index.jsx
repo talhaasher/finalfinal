@@ -3,12 +3,11 @@ import classes from './index.module.css';
 
 import React from 'react'
 
-function Post() {
+function Userserach() {
   return (
     <>
     <Header/>
     </>
-  )
-}
+)}
 
-export default Post;
+export default Userserach;

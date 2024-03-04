@@ -1,15 +1,14 @@
-import Header from '../../genrelComps/Header';
-import classes from './index.module.css';
-import React from 'react'
+import Header from "../../genrelComps/Header";
+import DragSwitch from "../comp/comp1";
+import classes from "./index.module.css";
 
 function Session() {
   return (
-    <>
-    <Header/>   
-     <div>Session</div>
-
-    </>
-  )
+    <div className={classes.body}>
+    <Header/>
+    <DragSwitch/>
+    </div>
+  );
 }
 
 export default Session;

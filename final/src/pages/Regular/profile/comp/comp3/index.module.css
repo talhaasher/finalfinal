@@ -1,0 +1,36 @@
+.tweet {
+    display: block;
+    border: 1px solid #1d1d1d;
+    padding: 20px;
+    border-radius: 20px;
+    margin: 0 auto;
+    margin-top: 40px;
+    /* width: 93%; */
+    margin-left: 30px;
+    margin-right: 30px;
+    align-items: center;
+    justify-content: center;
+    
+    -webkit-backdrop-filter: blur(10px);  
+    backdrop-filter: blur(10px);
+  
+  }
+  
+  
+  
+  .tweet_stats {
+    display: flex;
+    justify-content: space-between;
+  }
+  
+  .tweet_date,
+  .tweet_like {
+    font-weight: 300;
+    color: hsl(0, 0%, 33%);
+  }
+  
+  .tweet:hover{
+    border-color: #757373;
+    box-shadow: 0 4px 8px hsl(0, 0%, 33%);
+    
+  }

@@ -15,17 +15,16 @@ import AdmiHome from "./pages/admin/adminDashborad/page/index";
 import PM  from "./pages/admin/adminPM/page/index";
 import UM   from "./pages/admin/adminUM/page/index";
 import Adminlogin from "./pages/admin/adminlogin/page/index";
-
+import Userserach from './pages/Regular/user/page';
 export function WebRoutes() {
-  const IsAdminOrnot = useSelector((state) => state.reducer.IsAdminOrnot);
-  const isloggedin = useSelector((state) => state.reducer.isloggedin);
-  console.log(IsAdminOrnot,isloggedin);
+  const AdminOrNot = useSelector((state) => state.reducer.AdminOrNot);
+  const Loggedin = useSelector((state) => state.reducer.IsLoggedin);
 
   return (
     <Router>
       <Routes>
 
-        {isloggedin?((IsAdminOrnot?( <>
+        {Loggedin?((AdminOrNot?( <>
             <Route path="/session" element={<Session />} />
             <Route path="/home" element={<MainPage />} />
             <Route path="/" element={<MainPage />} />
@@ -38,6 +37,7 @@ export function WebRoutes() {
             <Route path="/profile/follower" element={<Follower />} />
             <Route path="/profile/following" element={<Following />} />
             <Route path="/post" element={<Post />} />
+            <Route path="/usersaerch" element={<Userserach />} />
 
             <Route path="/admin/home" element={<AdmiHome />} />
             <Route path="/admin/PM" element={<PM />} />
@@ -51,6 +51,7 @@ export function WebRoutes() {
               <Route path="/home" element={<MainPage />} />
               <Route path="/" element={<MainPage />} />
               <Route path="/auth" element={<MainPage />} />
+              <Route path="/usersaerch" element={<Userserach />} />
 
               {/* Profile and post routes */}
               <Route path="/profile" element={<Profile />} />
@@ -77,6 +78,7 @@ export function WebRoutes() {
             <Route path="/profile/*" element={<Navigate to="/auth" />} />
 
             <Route path="/post" element={<Navigate to="/auth" />} />
+            <Route path="/usersaerch" element={<Navigate to="/auth" />} />
 
             {/* Redirect to admin login for admin-specific routes */}
             <Route path="/admin/*" element={<Navigate to="/admin" />} />

@@ -1,0 +1,212 @@
+/* @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600&display=swap');
+/* Global styles */
+* {
+    /* Reset styles */
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    -webkit-user-select: none;
+    user-select: none; 
+    /* Set the default font family to Poppins */
+    font-family: "Poppins", sans-serif;
+  }
+  
+   .body{
+    background: rgb(255, 255, 255);
+    
+  } 
+  
+  /* Style the text selection */
+  ::selection {
+    color: #fff;
+    background: #6F36FF;
+  }
+  .wrapper{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+  
+    width: -moz-fit-content;
+    width: fit-content;
+    min-width:250px ;
+    max-width: 400px;
+    background: #fff;
+  
+  
+    border-style: solid;
+    border-radius: 20px;
+    border-color: black;
+  
+    box-shadow: 10px 10px 15px rgba(0, 0, 0, 0.06);
+    cursor: pointer;
+      -webkit-user-select: none;
+    user-select: none; 
+  
+  }
+  .wrapper header {
+    /* Set the font size of the header */
+    font-size: 23px;
+    /* Set the font weight of the header */
+    font-weight: 500;
+    /* Add padding to the header */
+    padding: 15px 30px;
+    /* Add a border to the bottom of the header */
+    border-bottom: 1px solid #000000;
+  }
+  
+  .wrapper header.active {
+    /* Make the active header clickable and draggable */
+    cursor: move;
+  
+    /* Disable user selection of the active header */
+    /* -webkit-user-select: none;
+    user-select: none;*/
+  } 
+  
+  .wrapper .content {
+    /* Set the display of the content to flex */
+    display: flex;
+  
+    /* Add padding to the content */
+    padding: 30px 30px 40px 30px;
+  
+    /* Center the content vertically and horizontally */
+    align-items: center;
+    flex-direction: column;
+    justify-content: center;
+  }
+  .content .icon i {
+    /* Set the color of the icon */
+    color: #6F36FF;
+  
+    /* Set the font size of the icon */
+    font-size: 60px;
+  }
+  
+  /*disabeld at moment  */
+  .content .icon {
+    /* Set the height and width of the icon */
+    height: 95px;
+    width: 95px;
+  
+    /* Add a border to the icon */
+    border: 5px solid #6F36FF;
+  
+    /* Make the icon a circle */
+    border-radius: 50%;
+  
+    /* Center the icon vertically and horizontally */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  
+  /* Title class */
+  .content .title {
+    /* Add margin to the title */
+    margin: 15px 0;
+  
+    /* Set the font size of the title */
+    font-size: 29px;
+  
+    /* Set the font weight of the title */
+    font-weight: 500;
+  }
+  
+  /* Paragraph class */
+  .content p {
+    /* Set the font size of the paragraph */
+    font-size: 16px;
+  
+    /* Center the paragraph text */
+    text-align: center;
+  } 
+  
+  
+  
+  
+  
+  
+  .dropbtn {
+    background-color: #f51111;
+    color: white;
+    padding: 16px;
+    font-size: 16px;
+    border: none;
+    cursor: pointer;
+  
+  }
+  .container{
+    border-radius: 10px;
+  }
+  
+  
+  .dropbtn:hover, .dropbtn:focus {
+    background-color: #6d0505;
+  }
+  
+  .dropdown {
+    position: relative;
+    display: inline-block;
+  }
+  
+  .dropdown-content {
+    display: none;
+    position: absolute;
+    background-color: #f1f1f1;
+    min-width: 160px;
+    overflow: auto;
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+    z-index: 1;
+  }
+  
+  .dropdown-content a {
+    color: black;
+    padding: 12px 16px;
+    text-decoration: none;
+    display: block;
+  }
+  
+  .dropdown a:hover {
+    background-color: #ddd;
+  }
+  
+  .show {
+    display: block;
+  }
+  
+  .switchbar {
+    display: flex;
+    justify-content: center;
+    text-align: center;
+  }
+  
+  nav li ul {
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+  }
+  
+  nav li ul li {
+    text-decoration: none;
+  }
+  .toggle_button{
+    cursor: pointer;
+    background-color: black;
+    color: white;
+    border-style: solid;
+    padding: 10px;
+    border-radius: 5px;
+    margin: 1px 2px 0 0 ;
+  }
+  .toggle_button:hover, .toggle_button:focus {
+    background-color: #6d0505;
+  }
+  
+  .hidden{
+    display: none;
+  
+  }
+  
+

@@ -1,0 +1,88 @@
+.profile {
+    margin-top: 20px;
+    margin: 30px 30px 0 30px;
+    width: 40;
+  }
+  
+  .profile .profile_cover {
+    background-color: #b7b7b7;
+    height: 250px;
+    width: 100%;
+  }
+  
+  .profile_basics {
+    display: flex;
+    position: relative;
+    top: -5px;
+    justify-content: center;
+  }
+  
+  .profile_basics_img {
+    height: 100px;
+    width: 100px;
+    background-color: lightgray;
+    border-radius: 50%;
+    border: 5px solid white;
+    margin-right: 25px;
+  }
+  .profile_basics_img:hover{
+    border:5px solid darkgray ;
+  }
+  .profile_basics_name {
+    margin-top: 30px;
+    margin-bottom: 5px;
+  }
+  
+  .profile_basics_handle {
+    margin-top: 5px;
+    font-weight: 300;
+    color: #2a2a2a;
+  }
+  
+  .profile_bio {
+    margin: 15px 0px 15px 0px ;
+    color: #535353;
+    text-align: center;
+    width: 0 auto;
+  }
+  
+  .profile_stats {
+    display: flex;
+    justify-content: center;
+    gap:  calc(30px + (100vw - 1024px) / 2);
+    
+  }
+    
+    
+  
+  
+  
+  .profile_stats h3 {
+    font-weight: normal;
+  }
+  .following p,
+  .Followers p{
+    text-align: center;
+  }
+  .following{
+    margin-right: 20px;
+  }
+  
+  
+  .following p:hover,
+  .Followers p:hover,
+  .profile_basics_handle:hover {
+    box-shadow: 0 2px 0px hsl(0, 0%, 33%);
+  }
+  
+  .divide {
+    margin: 0 auto;
+    color: transparent;
+    box-shadow: 0 4px 0px hsl(0, 0%, 33%);
+  }
+  
+  .following p a,.Followers p a{
+    list-style: none;
+    text-decoration: none;
+    color: black;
+  }

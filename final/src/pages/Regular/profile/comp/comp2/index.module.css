@@ -1,0 +1,36 @@
+.tweet{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 0;
+    flex-direction: column;
+}
+
+.tweet input,.tweet textarea{
+    text-align: center;
+    width: 7vw;
+    background-color: rgb(255, 255, 255);
+    border: 2px solid black;
+    color: black;
+    height: 6vh;
+    font-size: 15px;
+    border-radius: 20px;
+    align-items: center;
+    text-align: center;
+    justify-content: center;
+
+}
+.tweet textarea{
+    width: 20vw;
+    text-align: center ;
+    text-wrap: wrap;
+    height: 10vh;
+
+}
+
+.tweet input{
+    text-wrap: wrap;
+    
+
+}
+

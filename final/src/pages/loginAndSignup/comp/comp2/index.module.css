@@ -1,0 +1,91 @@
+
+.logo {
+    text-align: center;
+    width: 10vh;
+  }
+  
+  .logtext,
+  .regtext {
+    margin: 0 0 30px 0;
+    font-size:3vw ;
+  }
+  
+  .logForm,
+  .reg_form {
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    align-items: center;
+  }
+  
+  .logInputField,
+  .reginput_field {
+    height: 40px;
+    width: 35vw;
+min-width: 30vw;    border-radius: 15px;
+    background-color: white;
+    color: black
+  }
+  
+  .logForm,
+  .logInputField,
+  .reg_form,
+  .reginput_field {
+    margin: 10px 0px;
+    padding: 2px 5px;
+  }
+  
+  .logForm .logbutton,
+  .reg_form .reg_btn {
+    margin-top: 30px;
+    background-color: #050505;
+    border-radius: 20px;
+    font-size: 22px;
+    color: white;
+  }
+  
+  .submission {
+    margin-bottom: 20px;
+    cursor: pointer;
+    width: max-content;
+    background-color: transparent;
+    border: 1px none white;
+    color: rgb(255, 255, 255);
+  }
+
+  .login_switch {
+    font-weight: bold;
+    text-transform: uppercase;
+    cursor: pointer;
+  }
+  .login_switch:hover{
+        text-decoration: underline;
+
+  }
+  
+  .reg,
+  .Login {
+    background-color: rgba(0, 0, 0, 0.3);
+    width: vw; /* Changed to include alpha transparency */
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    text-align: center;
+    border: 2px double black;
+    border-radius: 15px;
+    padding: 0 10px 10px 10px;
+    -webkit-backdrop-filter: blur(10px); /* Added for the blur effect, adjust the blur radius as needed */
+    backdrop-filter: blur(10px);
+  }
+
+
+
+.pLogReg{
+  color: white;
+}
+
+.reg,.Login {
+  display: block;
+  width: 40%;
+  }

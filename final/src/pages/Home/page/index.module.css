@@ -1,0 +1,11 @@
+section{
+    border: 1px transparent rgba(0, 0, 0);
+    color: transparent;
+    border-radius: 20px;
+    width: 90%;
+    margin: 0 auto;
+    transform: translate( 0,-5);
+    
+    background-color: lightgray;
+    margin-bottom: 1vh;
+}
