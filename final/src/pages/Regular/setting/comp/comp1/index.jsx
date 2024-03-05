@@ -11,7 +11,6 @@ function SettingComp() {
   const navigate=useNavigate();
  
   const userinfo = useSelector((state) => state.reducer.userinfo);
-  const oldPassword = useSelector((state) => state.reducer.Password);
   const newemail = useSelector((state) => state.reducer.newemail);
   const UserId = useSelector((state) => state.reducer.UserId);
 
