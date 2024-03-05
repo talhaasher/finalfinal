@@ -1,12 +1,12 @@
 import Header from '../../../genrelComps/Header';
 import classes from './index.module.css';
 import Posts from '../comp/comp1';
-import React, { useEffect } from 'react';
+import React, { useEffect, useState } from 'react'
 import { useDispatch, useSelector } from 'react-redux';
 import { setFilteredTweets, setSearchTerm } from '../../../../redux/reducer';
 
 function Post() {
-  const dispatch = useDispatch();
+const dispatch=useDispatch();
   const searchTerm = useSelector((state) => state.reducer.searchTerm);
   const filteredTweets = useSelector((state) => state.reducer.filteredTweets);
 
@@ -45,22 +45,38 @@ function Post() {
     { user: "Lorain Strickler", content: "lstricklerrr@amazonaws.com", date: "10/30/2023", likes: 67 }
   ]
   useEffect(() => {
-    dispatch(setFilteredTweets(Alltweets));
+    // Fetch stored active tweets when the component mounts
+    const storedActiveTweets = JSON.parse(localStorage.getItem("activeTweets")) || Alltweets;
+    dispatch(setFilteredTweets(storedActiveTweets));
+
+    // Add an event listener for beforeunload to clear local storage when the tab is closed
+    const handleBeforeUnload = () => {
+      // Assuming "activeTweets" is the key for your local storage item
+      localStorage.removeItem("activeTweets");
+    };
+
+    window.addEventListener("beforeunload", handleBeforeUnload);
+
+    // Cleanup the event listener when the component is unmounted
+    return () => {
+      window.removeEventListener("beforeunload", handleBeforeUnload);
+    };
   }, []); // Empty dependency array ensures this effect runs only once when the component mounts
 
   function handleSearchChange(event) {
     const value = event.target.value;
     dispatch(setSearchTerm(value));
 
-    const filtered = Alltweets.filter((tweet) => {
+    const filtered = filteredTweets.filter((tweet) => {
+      const userMatches = tweet.user.toLowerCase().includes(value.toLowerCase());
       const contentMatches = tweet.content.toLowerCase().includes(value.toLowerCase());
 
       // Adjust the logic based on your requirements
       // Here, the filter will return true if either the username or content matches the search term
-      return  contentMatches;
+      return userMatches || contentMatches;
     });
 
-    dispatch(setFilteredTweets(filtered));
+    setFilteredTweets(filtered);
   }
 
   return (

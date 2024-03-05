@@ -15,9 +15,10 @@ const initialState = {
   stopWatchVisible: false,UserId:null,
   userinfo:{Handle:"",FirstName:"",LastName:"",Email:""
   ,Bio:"",tweets:[],Following:[],Follower:[],FollowerCount:0,FollowingCount:0},
-  Password:"",ConfirmPassword:"",AllTweets:{},ErrorMessages:[],confirmationState:false,
+  Password:"",ConfirmPassword:"",Alltweets:[],ErrorMessages:[],confirmationState:false,
 newemail:"",resetpas:"",
 newtweet:{NT:"",ND:"",Date:"",like:0},AcCPrivate:false,
+searchTerm:"",filteredTweets:[],usersearchTerm:"",filtereduser:[],
 };
 
 
@@ -56,11 +57,15 @@ const reducerSlice = createSlice({
       };
       state.Password = "";
       state.ConfirmPassword = "";
-      state.AllTweets = {};
+      state.AllTweets = [];
       state.ErrorMessages = [];
       state.confirmationState = false;
       state.newemail = "";
     },
+    setSearchTerm:(state,action) => {  state.searchTerm = action.payload; },
+    setFilteredTweets:(state,action) => {  state.filteredTweets = action.payload; },
+    setusersearchTerm:(state,action) => {  state.usersearchTerm = action.payload; },
+    setfiltereduser:(state,action) => {  state.filtereduser = action.payload; },
 
     setcalcvalue:(state,action) => {  state.calcvalue = action.payload; },
     setIsRunning:(state,action) => { state.isRunning = action.payload; },
@@ -106,7 +111,7 @@ export const {
  setAdmin,setRegular,setLogRegSwitch,setClear
  ,setcalcvalue,setIsRunning,setElapsedTime,setActiveDrags,setDeltaPosition,setControlledPosition,setCalculatorVisible,setTodoListVisible,setStopWatchVisible
  ,setUserId,setFirstName,setLastName,setEmail,setBio,setTweet,setFollowing,setFollower,setFollowerCount,setPassword,setConfirmPassword,setAllTweets,
- setErrorMessages,setPassowrdclear,setHandle,setUserInfo,setconfirmationState,setnewemail,setemailclear
+ setErrorMessages,setPassowrdclear,setHandle,setUserInfo,setconfirmationState,setnewemail,setemailclear,setFilteredTweets,setSearchTerm,setfiltereduser,setusersearchTerm
 ,setresetpas,setNTT,setNTD,setTweetdDate,setnewtweetclear,removeTweet,setIsLoggedin
 } = reducerSlice.actions;
 export default reducerSlice.reducer;

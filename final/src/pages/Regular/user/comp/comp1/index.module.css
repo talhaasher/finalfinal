@@ -1,0 +1,47 @@
+.tweet {
+    display: block;
+    padding: 1vh;
+    margin: 0 ;
+    border-radius: 15px;
+    align-items: center;
+    justify-content: space-around;
+    
+    
+    -webkit-backdrop-filter: blur(10px);  
+    backdrop-filter: blur(10px);
+    border: 1px dotted black;
+  
+  }
+  
+  
+  
+
+  
+  .tweet_date,
+  .tweet_like {
+    font-weight: 300;
+    color: hsl(0, 0%, 33%);
+  }
+  
+  .tweet:hover{
+    border-color: #757373;
+    box-shadow: 0 4px 8px hsl(0, 0%, 33%);
+    
+  }
+
+
+
+.tweet_body {
+  display: flex;
+  flex-wrap: wrap;
+}
+.tweet_title,.tweet_body,.tweet_stats,.tweet_title,.tweet_date{
+  padding-bottom: 10px;
+}
+@media screen and (max-width:415){
+  .tweet_stats{
+    flex-direction: column;
+
+  }
+  
+}
