@@ -20,11 +20,12 @@ function AddTweets() {
         const db = getDatabase();
 
       const Id = push(ref(db, "users/" + UserId + "/tweets"));
-  
       set(Id, {
+        id:Id._path.pieces_[3],
         title: newtweets.NT,
         description: newtweets.ND,
-        date: `${new Date().getDate()}:${new Date().getMonth() + 1}:${new Date().getFullYear()}  ${new Date().getHours()}:${new Date().getMinutes()}`,
+        date: `${new Date().getDate() } ${new Date().getMonth() + 1}  ${new Date().getFullYear()}` ,
+        time: `${new Date().getHours()}:${new Date().getMinutes()}`,
         likes: newtweets.like,
       });
   

@@ -17,7 +17,7 @@ const initialState = {
   ,Bio:"",tweets:[],Following:[],Follower:[],FollowerCount:0,FollowingCount:0},
   Password:"",ConfirmPassword:"",Alltweets:[],ErrorMessages:[],confirmationState:false,
 newemail:"",resetpas:"",
-newtweet:{NT:"",ND:"",Date:"",like:0},AcCPrivate:false,
+newtweet:{NT:"",ND:"",Date:"",time:"",like:0,ID:""},AcCPrivate:false,
 searchTerm:"",filteredTweets:[],usersearchTerm:"",filtereduser:[],
 };
 
@@ -29,19 +29,28 @@ const reducerSlice = createSlice({
     setAdmin: (state) => { state.AdminOrNot = true;state.IsLoggedin = true; },
     setRegular: (state,action) => {  state.AdminOrNot = false;  state.IsLoggedin = true;},
     setLogRegSwitch: (state) => { state.islogreg = !state.islogreg;  },
-    setClear:  (state) => {
+    setClear: (state) => {
+      // Resetting boolean values
       state.AdminOrNot = false;
       state.IsLoggedin = false;
       state.islogreg = true;
+    
+      // Clearing calculator-related state
       state.calcvalue = "";
       state.isRunning = false;
       state.elapsedTime = 0;
+    
+      // Drag-and-drop related state
       state.activeDrags = 0;
       state.deltaPosition = { x: 100, y: 100 };
       state.controlledPosition = { x: 400, y: 200 };
+    
+      // Resetting visibility flags
       state.calculatorVisible = false;
       state.todoListVisible = false;
       state.stopWatchVisible = false;
+    
+      // Clearing user-related state
       state.UserId = null;
       state.userinfo = {
         Handle: "",
@@ -57,11 +66,30 @@ const reducerSlice = createSlice({
       };
       state.Password = "";
       state.ConfirmPassword = "";
+    
+      // Clearing tweet-related state
       state.AllTweets = [];
+      state.newtweet = {
+        NT: "",
+        ND: "",
+        Date: "",
+        like: 0
+      };
+    
+      // Clearing error messages and confirmation state
       state.ErrorMessages = [];
       state.confirmationState = false;
+    
+      // Additional properties you mentioned
       state.newemail = "";
+      state.resetpas = "";
+      state.AcCPrivate = false;
+      state.searchTerm = "";
+      state.filteredTweets = [];
+      state.usersearchTerm = "";
+      state.filtereduser = [];
     },
+    
     setSearchTerm:(state,action) => {  state.searchTerm = action.payload; },
     setFilteredTweets:(state,action) => {  state.filteredTweets = action.payload; },
     setusersearchTerm:(state,action) => {  state.usersearchTerm = action.payload; },
@@ -77,7 +105,10 @@ const reducerSlice = createSlice({
     setTodoListVisible: (state, action) => {state.todoListVisible = !state.todoListVisible;},
     setStopWatchVisible: (state) => {state.stopWatchVisible = !state.stopWatchVisible; },
 
-    
+    removeTweet: (state, action) => {
+      const tweetIdToRemove = action.payload;
+      state.userinfo.tweets = state.userinfo.tweets.filter(tweet => tweet.id !== tweetIdToRemove);
+    },
     setUserId: (state, action) => {         state.UserId = action.payload;},
     setHandle: (state, action) => {         state.userinfo.Handle = action.payload;},
     setFirstName: (state, action) => {      state.userinfo.FirstName = action.payload;},
@@ -112,7 +143,7 @@ export const {
  ,setcalcvalue,setIsRunning,setElapsedTime,setActiveDrags,setDeltaPosition,setControlledPosition,setCalculatorVisible,setTodoListVisible,setStopWatchVisible
  ,setUserId,setFirstName,setLastName,setEmail,setBio,setTweet,setFollowing,setFollower,setFollowerCount,setPassword,setConfirmPassword,setAllTweets,
  setErrorMessages,setPassowrdclear,setHandle,setUserInfo,setconfirmationState,setnewemail,setemailclear,setFilteredTweets,setSearchTerm,setfiltereduser,setusersearchTerm
-,setresetpas,setNTT,setNTD,setTweetdDate,setnewtweetclear,removeTweet,setIsLoggedin
+,setresetpas,setNTT,setNTD,setTweetdDate,setnewtweetclear,setIsLoggedin,removeTweet
 } = reducerSlice.actions;
 export default reducerSlice.reducer;
 
